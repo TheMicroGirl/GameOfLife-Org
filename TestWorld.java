@@ -8,9 +8,15 @@ public class TestWorld {
 		int ROWS = 10; 
 		int COLUMNS = 20; 
 		
-		World earth = new EdgeWorld(ROWS, COLUMNS); 
+		World earth = new EdgeWorld(ROWS, COLUMNS); //uses the edgeworld logic
+		//World earth = new WrapWorld(ROWS, COLUMNS); //uses the wrapworld logic
 		Random rn = new Random();
 	
+		/*
+		* for simple population 
+		* creation of the for loops below is usefull as it allows 
+		*to easity adjust the starting population.
+		*/
 		
 		for(int i = 0; i <1; i++){
 			//create random positions on the grid for Creature1
@@ -41,7 +47,7 @@ public class TestWorld {
 		//and watch the world go wild
 		for(;;){
 			try{
-				Thread.sleep(500); //prints screen every 5 seconds
+				Thread.sleep(500); //prints screen every 0.5 seconds
 				earth.print();
 			}
 			catch(InterruptedException e) {
