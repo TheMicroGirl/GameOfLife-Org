@@ -53,7 +53,7 @@ public abstract class World {
 						System.out.print("-");
 					}
 					else{
-						System.out.print(world[i][j].getSpecieName());
+						System.out.print(world[i][j].getCreatureName());
 						popcount++; 
 					}
 				}

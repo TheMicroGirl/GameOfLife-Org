@@ -1,0 +1,143 @@
+<Project>
+  <Name>AP</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Specie</Name>
+        <Access>Public</Access>
+        <Location left="321" top="60" />
+        <Size width="308" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int lifespan</Member>
+        <Member type="Field">private double fitness</Member>
+        <Member type="Field">private World world</Member>
+        <Member type="Field">private int row</Member>
+        <Member type="Field">private int column</Member>
+        <Member type="Method">public void generateLifespan(int MAX_LIFESPAN)</Member>
+        <Member type="Method">public void run()</Member>
+        <Member type="Method">public void murder()</Member>
+        <Member type="Method">private void Reproduce()</Member>
+        <Member type="Method">private void populate(int r, int c)</Member>
+        <Member type="Method">public abstract Species getSpecie(int r, int c, World world)</Member>
+        <Member type="Method">public String getCreatureName()</Member>
+        <Member type="Method">public void setCreatureName(String name)</Member>
+        <Member type="Method">public double getFitness()</Member>
+        <Member type="Method">public void setFitness(double fitness)</Member>
+        <Member type="Method">public void setRow(int row)</Member>
+        <Member type="Method">public void setColumn(int column)</Member>
+        <Member type="Method">public void setWorld(World world)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Creature1</Name>
+        <Access>Public</Access>
+        <Location left="186" top="572" />
+        <Size width="270" height="203" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public final String NAME</Member>
+        <Member type="Field">private final int MAX_LIFESPAN</Member>
+        <Member type="Field">private final double FITNESS</Member>
+        <Member type="Field">private int newField</Member>
+        <Member type="Constructor">public Creature1(int row, int column, World world)</Member>
+        <Member type="Method">public Species getSpecie(int r, int c, World world)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Creature2</Name>
+        <Access>Public</Access>
+        <Location left="490" top="572" />
+        <Size width="270" height="203" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public final String NAME</Member>
+        <Member type="Field">private final int MAX_LIFESPAN</Member>
+        <Member type="Field">private final double FITNESS</Member>
+        <Member type="Field">private int newField</Member>
+        <Member type="Constructor">public Creature2(int row, int column, World world)</Member>
+        <Member type="Method">public Species getSpecie(int r, int c, World world)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>World</Name>
+        <Access>Public</Access>
+        <Location left="974" top="132" />
+        <Size width="278" height="235" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int rows</Member>
+        <Member type="Field">private int columns</Member>
+        <Member type="Field">private int newField</Member>
+        <Member type="Method">public void makeWorld()</Member>
+        <Member type="Method">public void colonise(int r, int c, Species organism)</Member>
+        <Member type="Method">public abstract int getPossibleRow(int r)</Member>
+        <Member type="Method">public abstract int getPossibleColumn(int c)</Member>
+        <Member type="Method">public Species getOrganism(int r, int c)</Member>
+        <Member type="Method">public void print()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WrapWorld</Name>
+        <Access>Public</Access>
+        <Location left="908" top="572" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int columns</Member>
+        <Member type="Field">private int rows</Member>
+        <Member type="Method">public int getPossibleRow(int r)</Member>
+        <Member type="Method">public int getPossibleColumn(int c)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EdgeWorld</Name>
+        <Access>Public</Access>
+        <Location left="1168" top="572" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int columns</Member>
+        <Member type="Field">private int rows</Member>
+        <Member type="Method">public int getPossibleRow(int r)</Member>
+        <Member type="Method">public int getPossibleColumn(int c)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tread</Name>
+        <Access>Public</Access>
+        <Location left="70" top="60" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="5" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

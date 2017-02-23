@@ -8,8 +8,8 @@ public class TestWorld {
 		int ROWS = 10; 
 		int COLUMNS = 20; 
 		
-		World earth = new EdgeWorld(ROWS, COLUMNS); //uses the edgeworld logic
-		//World earth = new WrapWorld(ROWS, COLUMNS); //uses the wrapworld logic
+		//World earth = new EdgeWorld(ROWS, COLUMNS); //uses the edgeworld logic
+		World earth = new WrapWorld(ROWS, COLUMNS); //uses the wrapworld logic
 		Random rn = new Random();
 	
 		/*

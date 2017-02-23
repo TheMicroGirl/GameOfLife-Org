@@ -7,7 +7,7 @@ public class Creature2 extends Species {
 	public Creature2(int row, int column, World world) {
 
 		//set values for each creature and pass it to the superclass Species
-		super.setSpecieName(this.NAME);
+		super.setCreatureName(this.NAME);
 		super.generateLifespan(this.MAX_LIFESPAN);
 		super.setFitness(this.FITNESS);
 		super.setWorld(world);
@@ -22,7 +22,7 @@ public class Creature2 extends Species {
 	 * @see Species#getSpecie(int, int, World)
 	 * returns its creature type
 	 */
-	public Species getSpecie(int r, int c, World world) {
+	public Species getCreature(int r, int c, World world) {
 		Species sp = new Creature2(r,c, world); 
 		
 		return sp; 

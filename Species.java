@@ -13,7 +13,7 @@ public abstract class Species extends Thread	{
 	//generates a random lifespan based on the max_lifespan of the species
 	public void generateLifespan(int MAX_LIFESPAN){
 		Random rn = new Random();
-		this.lifespan = rn.nextInt(MAX_LIFESPAN); 
+		this.lifespan = rn.nextInt(MAX_LIFESPAN + 1); 
 		
 	}
 		
@@ -100,7 +100,7 @@ public abstract class Species extends Thread	{
 	 * Please the creature in the world and start the thread
 	 */
 	private void populate(int r, int c){
-		Species sp1 = getSpecie(r, c, world);
+		Species sp1 = getCreature(r, c, world);
 		world.colonise(r, c, sp1);
 		sp1.start();
 		
@@ -112,17 +112,17 @@ public abstract class Species extends Thread	{
 	 * Depending on which Creature Class is extending species, it will have to return
 	 * its creature type
 	 */
-	public abstract Species getSpecie(int r, int c, World world);
+	public abstract Species getCreature(int r, int c, World world);
 
 	
 	//Getter and Setter Area
 	
 	
-	public String getSpecieName() {
+	public String getCreatureName() {
 		return this.name;
 	}
 
-	public void setSpecieName(String name) {
+	public void setCreatureName(String name) {
 		this.name = name;
 	}
 
