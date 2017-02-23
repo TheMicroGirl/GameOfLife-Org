@@ -51,34 +51,34 @@ public abstract class Species extends Thread	{
 
 			for (int i = -1; i < 2; i++) {
 				for (int j = -1; j < 2; j++) {
-
+					
 					int newRow = world.getPossibleRow(row + i);				//returns the possible location based on the logic
 																			//supplied in the WrapWorld or EdgeWrold Classes
 					int newColumn = world.getPossibleColumn(column + j);
-
-					if (newRow >= 0 && newColumn >= 0) { //only allows for positive numbers as possible locations. if the number is negative, the
-														//creature does not reproduce
 					
-						Species creature = world.getOrganism(newRow, newColumn);  //returns the organism in the specific position
-			
-						if (creature == null) {			//if the grid is empty work out the probability of placing the offspring there
-							if (Math.random() <= fitness) {
-								populate(newRow, newColumn);
-							}
-						} 
+						if (newRow >= 0 && newColumn >= 0) { //only allows for positive numbers as possible locations. if the number is negative, the
+															//creature does not reproduce
 						
-						else {
-							if (Math.random() <= (fitness - creature.getFitness())) { //decide if to murder the creature and reproduce
-
-								if (newRow == row && newColumn == column) {
-									selfReproduce = true; 	
+							Species creature = world.getOrganism(newRow, newColumn);  //returns the organism in the specific position
+				
+							if (creature == null) {			//if the grid is empty work out the probability of placing the offspring there
+								if (Math.random() <= fitness) {
+									populate(newRow, newColumn);
 								}
+							} 
+							
+							else {
+								if (Math.random() <= (fitness - creature.getFitness())) { //decide if to murder the creature and reproduce
+
+									if (newRow == row && newColumn == column) {
+										selfReproduce = true; 	
+									}
 
 								creature.murder();
 								populate(newRow, newColumn);
-							}
+								}
 
-						}
+							}
 						
 					}
 
@@ -89,6 +89,7 @@ public abstract class Species extends Thread	{
 			if (selfReproduce == false) { //if you don't reproduce over yourself in the grid, clear the grid point after death
 					world.colonise(row, column, null);
 			}
+		
 			
 		}
 	}

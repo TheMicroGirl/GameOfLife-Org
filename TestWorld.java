@@ -26,7 +26,7 @@ public class TestWorld {
 		}
 		
 		//CREATURE2
-		for(int i = 0; i <0; i++){
+		for(int i = 0; i <1; i++){
 			//create random positions on the grid for Creature 2
 			int r = rn.nextInt(ROWS);
 			int c = rn.nextInt(COLUMNS);
